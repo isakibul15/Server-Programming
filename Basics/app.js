@@ -1,19 +1,24 @@
-// Load HTTP module
-const http = require("http");
-
-const hostname = "127.0.0.1";
+const express = require("express"); //Includes the express library
+const app = express(); //Creates an Express Application
 const port = 3000;
 
-// Create HTTP server
-const server = http.createServer(function (req, res) {
-  // Set the response HTTP header with HTTP status and Content type
-  res.writeHead(200, { "Content-Type": "text/plain" });
-
-  // Send the response body "Hello World"
-  res.end("Hello World\n");
+/*** 
+app.get() takes a callback function as an argument that will be invoked
+whenever there is an HTTP GET request 
+with a path ('/') relative to the site root.
+The callback function takes a request and a response object as arguments,
+and calls send() on the response to return the string "Hello World!"
+The Express application object also provides methods to define route handlers
+ for all the other HTTP verbs, which are mostly used in exactly the same way:
+copy(), delete(), get(), head(), merge(), options(), patch(), post(), put(), etc,.
+There is a special routing method, app.all(), which will be called in 
+response to any HTTP method.
+***/
+app.use("/", function (req, res) {
+  res.send("Hello World!");
 });
 
-// Prints a log once the server starts listening
-server.listen(port, hostname, function () {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, function () {
+  //starts up the server on a specified port ('3000')
+  console.log(`Example app listening on port ${port}!`);
 });
