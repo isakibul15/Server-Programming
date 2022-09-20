@@ -19,6 +19,11 @@ response to any HTTP method.
 //   res.send("Hello World!");
 // });
 app.use(express.static("public"));
+
+app.set("view engine", "ejs"); // Setting EJS as template engine
+
+app.set("views", __dirname + "/views"); // Setting the directory for the view files
+
 app.use(router); // Router Middleware
 
 app.listen(port, function () {
