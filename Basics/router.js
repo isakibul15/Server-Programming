@@ -10,7 +10,7 @@ router.get("/about", (req, res) => {
 });
 
 router.get("/cv", (req, res) => {
-  res.sendFile(__dirname + "/public/cv.html");
+  res.render("cv", { name: "Md.Sakibul Islam" });
 });
 
 module.exports = router;
