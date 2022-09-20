@@ -18,6 +18,7 @@ response to any HTTP method.
 // app.get("/", function (req, res) {
 //   res.send("Hello World!");
 // });
+app.use(express.static("public"));
 app.use(router); // Router Middleware
 
 app.listen(port, function () {

@@ -9,4 +9,8 @@ router.get("/about", (req, res) => {
   res.send("About Page");
 });
 
+router.get("/cv", (req, res) => {
+  res.sendFile(__dirname + "/public/cv.html");
+});
+
 module.exports = router;
