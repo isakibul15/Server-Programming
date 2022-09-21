@@ -1,0 +1,24 @@
+
+{
+    "1": {
+      "genre": "Backend Developer",
+      "workStation": "php.com",
+      "start": "Sep 2022",
+      "end": "Current",
+      "info": "Backend developer at php"
+    },
+    "2": {
+      "genre": "Frontend Developer",
+      "workStation": "javascript.com",
+      "start": "Apr 2021",
+      "end": "Sep 2022",
+      "info": "Frontend developer at javascript"
+    },
+    "3": {
+      "genre": "UI Designer",
+      "workStation": "figma.com",
+      "start": "Jan 2020",
+      "end": "Apr 2021",
+      "info": "UI designer at figma"
+    }
+  }
