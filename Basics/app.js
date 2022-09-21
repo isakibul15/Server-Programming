@@ -1,7 +1,7 @@
 const express = require("express"); //Includes the express library
 const app = express(); //Creates an Express Application
 const router = require("./router");
-const port = 6969;
+const port = 3000;
 
 /*** 
 app.get() takes a callback function as an argument that will be invoked
