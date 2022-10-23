@@ -8,6 +8,6 @@ router.get("/books", bookController.getBook)
 router.post("/books", bookController.postBook)
 router.get("/book-list", bookController.getBookList)
 router.get('/delete-book',bookController.deleteBook)
-// router.get('/edit-book',bookController.editBook)
+router.get('/edit-book',bookController.editBook)
 
 module.exports = router;

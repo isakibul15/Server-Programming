@@ -30,20 +30,30 @@ const deleteBook = async (req, res) => {
   } finally {
     res.redirect("/books");
   }
-  
-deleteBook.get("/:id/deleteTask", async (req, res) => {
-  const todos = await Todo.findByIdAndDelete(req.params.id);
-  res.redirect("/");
-});
+};
 
+const editBook = async (req, res) => {
+  const { id } = req.body;
+  let books = [];
+  try {
+    await editBodyById(id);
+    books = await getBookList();
+  } catch (error) {
+    console.log(error);
+  } finally {
+    res.render("bookList", { books: books });
+  }
+};
 
-// const editBook = async (req, res) => {
-//     const { id } = req.body;
-//     let books = [];
-//     try {
-//         await editBodyById(id);
-//         books = await getBookList();
-
+const editBodyById = async (id) => {
+  try {
+    await bookModel.findByIdAndUpdate(id, {
+      name: "The Alchemist",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const postBook = (req, res) => {
   const data = new bookModel({
@@ -64,4 +74,4 @@ const postBook = (req, res) => {
     });
 };
 
-module.exports = { getBookList, getBook, postBook, deleteBook };
+module.exports = { getBookList, getBook, postBook, deleteBook, editBook };
