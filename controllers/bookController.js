@@ -1,5 +1,5 @@
-const bookModel = require("../models/book")
-const books = require("../models/book")
+const bookModel = require("../models/books")
+
 
 const getBookList = async (req,res) =>{
     let data= []
